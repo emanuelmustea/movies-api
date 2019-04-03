@@ -2,6 +2,7 @@ import express from 'express';
 import customResponses from './middlewares/customResponses';
 import router from './config/routes';
 import bodyParser from 'body-parser';
+import config from './config';
 
 const app = express();
 const port = 3000;
@@ -16,4 +17,4 @@ app.use((req, res) => {
   res.notFound();
 });
 
-app.listen(port);
+app.listen(config.port);
