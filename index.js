@@ -1,10 +1,13 @@
 import express from "express";
 import bodyParser from "body-parser";
-
 import customResponses from "./middlewares/customResponses";
 import router from "./config/routes";
 import config from "./config";
-import mongooseConfig from "./config/mongoose";
+
+import configMongoose from "./config/mongoose";
+
+// eslint-disable-next-line no-unused-vars
+import blabla from "./models/movie";
 
 const app = express();
 
@@ -12,7 +15,7 @@ app.use( customResponses );
 
 app.use( bodyParser.urlencoded() );
 
-app.set( "mongoose", mongooseConfig );
+configMongoose();
 
 app.use( router );
 
