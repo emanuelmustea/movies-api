@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import mongooseKeywords from "mongoose-keywords";
 
 const { Schema } = mongoose;
 
@@ -18,5 +19,6 @@ const movieSchema = new Schema( {
     video: { type: Boolean },
     vote_average: { type: Number },
 } );
+movieSchema.plugin( mongooseKeywords, { paths: [ "title", "overview" ] } );
 
 export default mongoose.model( "Movie", movieSchema );

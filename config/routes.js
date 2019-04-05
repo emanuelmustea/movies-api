@@ -7,6 +7,8 @@ const router = express.Router();
 
 router.get( "/movies/discovery", query(), moviesController.moviesDiscovery );
 
+router.get( "/movies/search", query(), moviesController.searchMovies );
+
 router.post( "/movies/update", moviesController.updateMovie );
 
 router.post( "/movies/add", moviesController.addMovie );

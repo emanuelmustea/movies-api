@@ -13,6 +13,12 @@ const customResponses = {
             fields: Object.keys( errors ),
         } );
     },
+    badRequest() {
+        return this.status( 400 ).json( {
+            success: false,
+            error: "bad_request",
+        } );
+    },
 };
 export default ( req, res, next ) => {
     Object.assign( res, customResponses );
