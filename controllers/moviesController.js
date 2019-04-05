@@ -21,7 +21,6 @@ const moviesDiscovery = async ( req, res ) => {
 };
 const addMovie = ( req, res ) => {
     const movie = new Movie( req.body );
-
     movie.save( ( err, savedUser ) => {
         if ( err ) {
             res.validationError( err );
@@ -30,7 +29,9 @@ const addMovie = ( req, res ) => {
         res.json( { type: "success", result: savedUser } );
     } );
 };
-const updateMovie = ( req, res ) => {
-    res.json( { type: "success", ...req.body } );
+const updateMovie = async ( req, res ) => {
+    const { _id } = req.body;
+    const update = await Movie.update( { _id }, req.body );
+    res.json( { type: "success", updated: update.n } );
 };
 export default { moviesDiscovery, updateMovie, addMovie };

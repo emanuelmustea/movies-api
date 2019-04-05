@@ -11,7 +11,6 @@ const app = express();
 app.use( customResponses );
 
 app.use( bodyParser.json() );
-
 configMongoose();
 
 app.use( router );
