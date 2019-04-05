@@ -7,7 +7,7 @@ import config from "./config";
 import configMongoose from "./config/mongoose";
 
 // eslint-disable-next-line no-unused-vars
-import blabla from "./models/movie";
+import CreateMovieModel from "./models/movie";
 
 const app = express();
 
