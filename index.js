@@ -6,15 +6,11 @@ import config from "./config";
 
 import configMongoose from "./config/mongoose";
 
-// eslint-disable-next-line no-unused-vars
-import CreateMovieModel from "./models/movie";
-
 const app = express();
 
 app.use( customResponses );
 
-app.use( bodyParser.urlencoded() );
-
+app.use( bodyParser.json() );
 configMongoose();
 
 app.use( router );
@@ -27,6 +23,7 @@ app.use( ( err, req, res, next ) => { // eslint-disable-line no-unused-vars
     res.status( 503 ).json( {
         success: false,
         error: "server_error",
+        errorMessage: err,
     } );
 } );
 
