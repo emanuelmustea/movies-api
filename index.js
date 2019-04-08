@@ -11,9 +11,10 @@ const app = express();
 app.use( customResponses );
 
 app.use( bodyParser.json() );
+
 configMongoose();
 
-app.use( router );
+app.use( "/", router );
 
 app.use( ( req, res ) => {
     res.notFound();

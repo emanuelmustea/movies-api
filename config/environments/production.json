@@ -2,5 +2,6 @@
   "host": "127.0.0.1",
   "port": 3000,
   "dbName": "MoviesApi",
-  "mongoUrl": "mongodb+srv://admin:qc8cmd8GfPF8Bwk2@cluster0-s3lqh.mongodb.net/test?retryWrites=true"
+  "mongoUrl": "mongodb+srv://admin:qc8cmd8GfPF8Bwk2@cluster0-s3lqh.mongodb.net/moviesAPI?retryWrites=true",
+  "secretKey": "2441ADEE39A37F2ACDA436312CEAC"
 }
