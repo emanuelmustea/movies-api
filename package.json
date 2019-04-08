@@ -4,7 +4,8 @@
   "description": "This API is the backend for Movie Library",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec babel-node index.js --inspect"
+    "start": "nodemon --exec babel-node src/index.js --inspect",
+    "build": "babel src --out-dir dist"
   },
   "author": "Emanuel Mustea",
   "license": "ISC",
@@ -17,7 +18,8 @@
     "eslint": "^5.16.0",
     "eslint-config-fortech": "^2.0.2",
     "eslint-plugin-import": "^2.16.0",
-    "nodemon": "^1.18.10"
+    "nodemon": "^1.18.10",
+    "@babel/cli": "^7.0.0"
   },
   "dependencies": {
     "aes256": "^1.0.4",
