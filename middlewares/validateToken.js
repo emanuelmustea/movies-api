@@ -6,7 +6,7 @@ const validateToken = ( req, res, next ) => {
     if ( !token ) {
         return res.unauthorized();
     }
-    jwt.verify( token, config.secretKey, ( err, decoded ) => {
+    return jwt.verify( token, config.secretKey, ( err, decoded ) => {
         if ( err ) {
             return res.unauthorized();
         }
