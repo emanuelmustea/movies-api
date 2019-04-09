@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 import customResponses from "./middlewares/customResponses";
 import router from "./config/routes";
 import config from "./config";
-
+import configCleanup from "./config/cleanup";
 import configMongoose from "./config/mongoose";
 
 const app = express();
@@ -28,4 +28,6 @@ app.use( ( err, req, res, next ) => { // eslint-disable-line no-unused-vars
     } );
 } );
 
-app.listen( config.port );
+const server = app.listen( config.port );
+
+configCleanup( server );
